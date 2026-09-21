@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GridManager : MonoBehaviour
+public class Grid_Manager : MonoBehaviour
 {
     public float gridSize = 1f;
 

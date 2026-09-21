@@ -2,9 +2,8 @@ using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    public Camera mainCamera;
     public GameObject towerPrefab;
-    public GridManager GridManager;
+    public GridManager gm;
 
     // Update is called once per frame
     void Update()
@@ -17,16 +16,17 @@ public class TowerPlacement : MonoBehaviour
 
     void PlaceTower()
     {
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        RaycastHit hit;
+        Plane ground = new Plane(Vector3.up, Vector3.zero);
 
-        if(Physics.Raycast(ray, out hit))
+        if (ground.Raycast(ray, out float distance))
         {
-            Vector3 gridPosition = GridManager.SnapToGrid(hit.point);
+            Vector3 mousePosition = ray.GetPoint(distance);
 
-            Instantiate(towerPrefab,gridPosition,Quaternion.identity);
+            Vector2Int gridPosition = gm.GetGridCoordinate(mousePosition);
+
+            gm.InstantiateObjectOnGrid(gridPosition,towerPrefab);
         }
- 
     }
 }

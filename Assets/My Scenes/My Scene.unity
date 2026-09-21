@@ -119,52 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &10413573
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 10413575}
-  - component: {fileID: 10413574}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &10413574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10413573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f42b3ad8659cb40946fd55dc0ff6a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  enemyObject: {fileID: 3502855757754868105, guid: 15645cd3d31b5c44cb634a2a9e3697b8, type: 3}
-  timeScale: 5
---- !u!4 &10413575
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 10413573}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.91253, y: -0, z: -0.37205}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +383,7 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!1 &642182344
+--- !u!1 &659639519
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -437,8 +391,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 642182346}
-  - component: {fileID: 642182345}
+  - component: {fileID: 659639521}
+  - component: {fileID: 659639520}
   m_Layer: 0
   m_Name: GridManager
   m_TagString: Untagged
@@ -446,29 +400,33 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &642182345
+--- !u!114 &659639520
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642182344}
+  m_GameObject: {fileID: 659639519}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a75d8c695b688c84388e278fea910a9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9457336e40ea56d49a4be593ff46f2bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridManager
-  gridSize: 1
---- !u!4 &642182346
+  width: 8
+  height: 4
+  gridScale: 2.5
+  enemyObject: {fileID: 3502855757754868105, guid: 15645cd3d31b5c44cb634a2a9e3697b8, type: 3}
+  timeScale: 0
+--- !u!4 &659639521
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642182344}
+  m_GameObject: {fileID: 659639519}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.43472, y: 0.75242, z: 5.02498}
+  m_LocalPosition: {x: -3.75, y: 0.5, z: -3.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -609,9 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fe84e7d337565449370a9373d26157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerPlacement
-  mainCamera: {fileID: 330585545}
   towerPrefab: {fileID: 5687303673411534724, guid: 44aa6da01fe378f43aebd316812dc47d, type: 3}
-  GridManager: {fileID: 642182345}
+  gm: {fileID: 659639520}
 --- !u!4 &1071018016
 Transform:
   m_ObjectHideFlags: 0
@@ -698,7 +655,7 @@ GameObject:
   - component: {fileID: 1471769754}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1033,10 +990,9 @@ SceneRoots:
   - {fileID: 410087041}
   - {fileID: 832575519}
   - {fileID: 1071018016}
-  - {fileID: 642182346}
   - {fileID: 1471769757}
   - {fileID: 1664490612645146803}
   - {fileID: 1066627277}
   - {fileID: 1314645740}
   - {fileID: 1990799621}
-  - {fileID: 10413575}
+  - {fileID: 659639521}

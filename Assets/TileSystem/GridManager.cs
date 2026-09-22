@@ -36,7 +36,7 @@ public class GridManager : MonoBehaviour
                 Instantiate(enemyObject, new Vector3(x, 0.5f, z + i * 2.5f), Quaternion.identity);
             }
 
-            timeScale = 5f;
+            timeScale = 0.3f;
         }
     }
 

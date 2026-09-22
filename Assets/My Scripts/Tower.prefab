@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 1166932856219686112}
   - component: {fileID: 6706979970638194898}
   - component: {fileID: 3769306920108648306}
+  - component: {fileID: -8687245364430659480}
   m_Layer: 0
   m_Name: Tower
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -127,3 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feff0f9f8034161478b523f303b55129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridTransform
+--- !u!114 &-8687245364430659480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5687303673411534724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4269e281763b6904ca8e1cf5109ccf54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  towerHealth: 5

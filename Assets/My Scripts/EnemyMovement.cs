@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -16,5 +17,13 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
         rb.linearVelocity = new Vector3(-speed, 0, 0);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
